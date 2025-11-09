@@ -4,28 +4,60 @@ Cấu hình chung cho NodeJS (Backend và Frontend)
 
 ==========================================================
 
-node_modules
-/build
-/dist
+node_modules/
+
+Thư mục build/dist/out ở cấp độ gốc (nếu có)
+
+/build/
+/dist/
+/out/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-Ứng dụng Node/Express của bạn
+==========================================================
 
-.env # Tuyệt đối không đẩy file môi trường lên!
+File cấu hình môi trường (Bất kể nằm ở đâu trong dự án)
+
+Dùng *.env để bắt tất cả các file có đuôi .env (ví dụ: .env.production)
+
+Dùng /.env để bắt file .env ở thư mục gốc
+
+Nếu bạn có .env trong cả frontend/ và backend/, chỉ cần khai báo như sau:
+
+.env
+*/.env
+
+Hoặc đơn giản là
+
+*.env
 
 ==========================================================
 
-Cấu hình Frontend (Nếu dùng React/Angular/Vue)
+Cấu hình Frontend (React/Angular/Vue)
 
 ==========================================================
+
+Thư mục node_modules/ trong frontend
+
+frontend/node_modules/
 
 Thư mục build/deploy của Frontend
 
-/frontend/build
-/frontend/dist
-/frontend/out
+frontend/build/
+frontend/dist/
+frontend/out/
+
+==========================================================
+
+Cấu hình Backend
+
+==========================================================
+
+Thư mục dist của Backend (thường chứa code JS đã compile từ TS)
+
+backend/dist/
+backend/node_modules/
 
 ==========================================================
 
@@ -33,5 +65,5 @@ Môi trường Editor/IDE
 
 ==========================================================
 
-.vscode/ # Cấu hình Visual Studio Code cá nhân
+.vscode/
 .DS_Store
